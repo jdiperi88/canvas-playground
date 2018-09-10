@@ -1,6 +1,6 @@
 window.onload = function() {
 	// Definitions
-	var canvas = document.getElementById("canvas");
+	var canvas = document.getElementById("lab-complex-curves-canvas");
 	var context = canvas.getContext("2d");
 
 	// heart
