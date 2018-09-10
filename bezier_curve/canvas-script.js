@@ -11,7 +11,7 @@ window.onload = () => {
 	context.lineWidth = 10;
 	context.moveTo(200, 250);
 
-	context.bezierCurveTo(0, 0, 500, 100, 500, 1000);
+	context.bezierCurveTo(0, 0, 500, 100, 500, 500);
 
 	context.stroke();
 };
