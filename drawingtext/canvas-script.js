@@ -2,15 +2,15 @@ window.onload = () => {
 	//definitions
 	var canvas = document.getElementById("canvas");
 	var context = canvas.getContext("2d");
-	context.font = "45px verdana";
-	// shadow attributes on canvas
-	// context.fillText(text,xCoord,YCoord,maxwidth)
-	var fText = "fill text on canvas";
-	context.fillText(fText, 80, 100);
+	// context.font = "45px verdana";
+	// // shadow attributes on canvas
+	// // context.fillText(text,xCoord,YCoord,maxwidth)
+	// var fText = "fill text on canvas";
+	// context.fillText(fText, 80, 100);
 
-	// context.strokeText(text,xcoord,ycoord,maxwidth)
-	var sText = "stroke text on canvas";
-	context.strokeText(sText, 80, 200);
+	// // context.strokeText(text,xcoord,ycoord,maxwidth)
+	// var sText = "stroke text on canvas";
+	// context.strokeText(sText, 80, 200);
 
 	//canvas text cheatsheet
 	// context.font = "font-style font-weight font-size font-family";
@@ -39,15 +39,36 @@ window.onload = () => {
 	// - generic-family (like "serif", "sans-serif", "cursive", "fantasy", "monospace", ...)
 	// - inherit (style comes from the parent element)
 
-	var text = "This text will be styled!";
+	// var text = "This text will be styled!";
 
-	context.font = "normal 800 xx-large times"; // fillText Style
+	// context.font = "normal 800 xx-large times"; // fillText Style
 
-	context.fillText(text, 100, 400);
+	// context.fillText(text, 100, 400);
 
-	context.font = "italic 400 48px monospace"; // strokeText Style
+	// context.font = "italic 400 48px monospace"; // strokeText Style
 
-	context.strokeText(text, 100, 450);
+	// context.strokeText(text, 100, 450);
 
 	// context.font = "- - - -";
+
+	function draw3DText(text, x, y, style, color, size) {
+		context.font = style;
+		context.fillStyle = "black";
+
+		for (var i = 0; i < size; i++) {
+			context.fillText(text, x - i, y - i);
+		}
+
+		context.fillStyle = color;
+		context.fillText(text, x, y);
+	}
+
+	draw3DText(
+		"this text will be in 3d",
+		100,
+		300,
+		"normal 600 54px monospace",
+		"red",
+		10
+	);
 };
