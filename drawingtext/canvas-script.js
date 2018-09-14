@@ -51,9 +51,9 @@ window.onload = () => {
 
 	// context.font = "- - - -";
 
-	function draw3DText(text, x, y, style, color, size) {
+	function draw3DText(text, x, y, style, color, size, shadow) {
 		context.font = style;
-		context.fillStyle = "black";
+		context.fillStyle = shadow;
 
 		for (var i = 0; i < size; i++) {
 			context.fillText(text, x - i, y - i);
@@ -64,11 +64,12 @@ window.onload = () => {
 	}
 
 	draw3DText(
-		"this text will be in 3d",
-		100,
+		"Joey",
+		300,
 		300,
 		"normal 600 54px monospace",
-		"red",
-		10
+		"blue",
+		20,
+		"black"
 	);
 };
