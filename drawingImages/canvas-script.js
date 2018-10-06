@@ -38,4 +38,9 @@ pokemonTile.onload = function() {
 		imageData.data[i + 3] = 255; //alpha
 	}
 	context.putImageData(imageData, 0, 0);
+
+	// save canvas image as data url
+
+	var dataUrl = canvas.toDataURL();
+	document.getElementById("canvasImg").src = dataUrl;
 };
