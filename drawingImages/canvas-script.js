@@ -32,11 +32,9 @@ pokemonTile.onload = function() {
 	//A - The alpha channel ( from 0-255)
 
 	for (var i = 0; i < imageData.data.length; i += 4) {
-		var average =
-			(imageData.data[i] + imageData.data[i + 1] + imageData.data[i + 2]) / 3;
-		imageData.data[i] = average; //red
-		imageData.data[i + 1] = average; //green
-		imageData.data[i + 2] = average; //blue
+		imageData.data[i] = 255 - imageData.data[i]; //red
+		imageData.data[i + 1] = 205 - imageData.data[i + 1]; //green
+		imageData.data[i + 2] = 05 - imageData.data[i + 2]; //blue
 		imageData.data[i + 3] = 255; //alpha
 	}
 	context.putImageData(imageData, 0, 0);
